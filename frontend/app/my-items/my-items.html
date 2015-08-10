@@ -1,0 +1,47 @@
+<div class="row">
+    <button class="btn btn-success"
+            ng-click="filterValue='AVAILABLE'">Available
+    </button>
+
+    <button class="btn btn-warning"
+            ng-click="filterValue='PENDING'">Pending
+    </button>
+
+    <button class="btn btn-danger"
+            ng-click="filterValue='CLOSED'">Closed
+    </button>
+
+    <div class="col-md-2 pull-right">
+
+        <input type="text" class="form-control" placeholder="Search" ng-model="searchTerm">
+
+    </div>
+</div>
+
+<br>
+
+<div class="row">
+      
+    <div class="col-sm- col-md-4 col-lg-3" ng-repeat="item in items | filter: searchTerm | filter: filterValue">
+            
+        <div class="thumbnail">
+                  
+            <div class="item-card">
+                <a href="#/items/{{ item.id }}">
+                    <img class="img-responsive" src="{{item.picture}}">
+                </a>
+                <h2>
+                    <a href="#/items/{{ item.id }}">
+                        {{ item.name }}
+                    </a>
+                </h2>
+
+                 <!--       <p>{{item.description}}</p>  -->
+                    
+            </div>
+                
+        </div>
+          
+    </div>
+</div>
+

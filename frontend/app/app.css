@@ -1,0 +1,321 @@
+/* app css stylesheet */
+
+body {
+    background: url(img/swap_shop5.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding-top: 70px;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+}
+
+.nav li:nth-child(even) a {
+    color: #f16222;
+    font-size: 20px;
+}
+
+.nav li:nth-child(odd) a {
+    color: #0fa1b5;
+    font-size: 20px;
+}
+
+a {
+    color: #208d9c;
+}
+
+.navbar-brand {
+    padding: 0;
+    max-height: 160%
+}
+
+.menu ul > li {
+    display: inline;
+}
+
+.navbar-brand > img {
+    max-height: 120%;
+}
+
+/*Buttons*/
+
+.btn-danger {
+    background-color: #f16222;
+}
+
+.btn-danger-border {
+    color: #000;
+}
+
+.btn-danger:hover {
+    background-color: #e37718;
+}
+
+.btn-primary {
+    background-color: #0fa1b5;
+}
+
+.btn-primary:hover {
+    background-color: #208d9c;
+}
+
+.btn-swap {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #208d9c;
+    font-size: 175%;
+    margin-left: 30%;
+}
+
+.btn-swap:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+    color: #208d9c;
+}
+
+.item-detail-card h2 {
+    color: #208d9c;
+}
+
+/*End Buttons*/
+.menu {
+    list-style: none;
+    margin-bottom: 2em;
+    padding: 15px .25em 0.25em;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 14px;
+}
+
+.menu ul > li {
+    display: inline;
+}
+
+.menu-container {
+    width: 100%;
+    margin-top: 53px;
+    background-color: #00142f;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+.social-icon i {
+    color: #989797;
+    padding-right: 20%
+}
+
+.social-icon i:hover {
+    color: #545353;
+}
+
+.item-card {
+    padding: inherit;
+    background-color: rgba(255, 255, 255, 0.7);
+    height: 300px;
+}
+
+.item-card h2, .item-card p {
+    padding-left: 3%;
+}
+
+.thumbnail {
+    border-radius: 0;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.7)
+    /*opacity: .7;*/
+}
+
+.item-detail-card {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.7);
+    height: inherit;
+    margin-bottom: 20px;
+}
+
+.menu td {
+    text-align: center;
+}
+
+.navbar-default {
+    background-color: #000;
+    border: 0;
+}
+
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    height: 222px position : absolute;
+    z-index: 1;
+}
+
+.row {
+    line-height:1px;
+}
+
+.my-items {
+    width: 100%;
+    /*padding-top: 20px;*/
+}
+
+.swaps-col-heading {
+    background-color: rgba(255,255,255,0.7);
+    margin: 15px;
+    padding: 10px 0;
+}
+
+.swaps-col-heading h2 {
+    margin-top: 10px;
+}
+
+
+.not-selected:hover {
+    /*opacity: 0;*/
+    background: #0fa1b5;
+    -webkit-transition: all ease .5s;
+    -moz-transition: all ease .5s;
+    transition: all ease .5s;
+}
+
+.my-items img {
+    height: auto;
+}
+
+.item-card a> img {
+    height: 200px;
+    width: auto;
+}
+
+.my-items h2 {
+    margin-top: 0
+}
+
+.listItems {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.empty-swap-space {
+    background-color: rgba(255, 255, 255, 0.7);
+    max-height: 100%;
+}
+
+.fa-square-o, .fa-check-square-o {
+    font-size: 2em;
+    margin-left: -4%;
+    margin-top: 5px;
+    color: #208d9c;
+}
+
+.hover-hand {
+    cursor: pointer;
+}
+
+.img-centered {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.swap-pic-container img{
+    height: 200px;
+    max-width: 100%;
+}
+
+
+.error {
+    display: inline-block;
+    color: red;
+    font-size: 12px;
+}
+
+input.ng-dirty.ng-invalid, select.ng-dirty.ng-invalid, textarea.ng-dirty.ng-invalid {
+    border: 1px solid red;
+    outline: none;
+}
+
+.help-text {
+    display: inline-block;
+    font-size: 12px;
+    margin-right: 5px;
+    padding-left: 2px;
+}
+
+.options-group {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+
+.buttons {
+    margin-top: 25px;
+}
+
+.radio-options-group {
+    margin-top: 20px;
+}
+
+.radio-options-group .radio-inline {
+    margin-left: 20px;
+}
+
+.radio-options-group .radio-inline:first-child {
+    margin-left: 0;
+}
+
+.add-item-detail-card {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+}
+
+#select-file {
+    text-align: center;
+}
+
+#item-name {
+    text-align: center;
+}
+
+#item-description {
+    text-align: center;
+}
+
+#item-condition {
+    text-align: center;
+}
+
+#select-image {
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .navbar-nav {
+        float:none; !important
+    }
+}
+
+.navbar-inverse {
+    opacity: 0.9;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+.form-signin-heading {
+    text-shadow: 1px 1px 14px #fff;
+    color: black;
+}
+
+.btn-link {
+    text-shadow: 1px 1px 14px #fff;
+    font-size: large;
+    color: black;
+}
+
+
+/*End selecting items in the item details page*/
