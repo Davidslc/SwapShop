@@ -72,7 +72,7 @@ ROOT_URLCONF = 'swapshop.urls'
 
 WSGI_APPLICATION = 'swapshop.wsgi.application'
 
-MEDIA_ROOT = 'media/'
+MEDIA_ROOT = BASE_DIR + '/media/'
 
 MEDIA_URL = '/media/'
 
