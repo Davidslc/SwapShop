@@ -24,6 +24,7 @@ angular.module('myApp', [
     .run(['$cookieStore', '$rootScope', '$http', '$location', 'Restangular', function ($cookieStore, $rootScope, $http, $location, Restangular) {
         if ($cookieStore.get('djangotoken')) {
             $http.defaults.headers.common['Authorization'] = 'Token ' + $cookieStore.get('djangotoken');
+            $http.defaults.headers.commong['X-CSRFToken'] = $cookieStore.get('csrftoken');
             //document.getElementById("main").style.display = "block";
             //$location.path('/login')
         } else {
