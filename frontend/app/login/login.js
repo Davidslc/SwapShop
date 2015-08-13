@@ -17,7 +17,7 @@ angular.module('myApp.login', ['ngRoute', 'ngCookies'])
         "password": $scope.password
       };
 
-      $http.post("api-token-auth/", user_data)
+      $http.post("/api/api-token-auth/", user_data)
         .success(function (response) {
           $cookieStore.put('djangotoken', response.token);
           get_user_data(response.token);
