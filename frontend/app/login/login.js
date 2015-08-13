@@ -24,7 +24,10 @@ angular.module('myApp.login', ['ngRoute', 'ngCookies'])
           //$http.defaults.headers.common['Authorization'] = 'Token ' + response.token;
           //authService.loginConfirmed();
           $location.path('/swap-gallery');
-        });
+        })
+          .error(function(response) {
+            console.log(response);
+          });
     };
     
     var get_user_data = function(token) {
