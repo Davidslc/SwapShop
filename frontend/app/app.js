@@ -14,8 +14,11 @@ angular.module('myApp', [
     'myApp.login',
     'myApp.register'
 ])
-    .config(['$routeProvider', "RestangularProvider", function ($routeProvider, RestangularProvider) {
+    .config(['$routeProvider', "$httpProvider", "RestangularProvider", function ($routeProvider, $httpProvider, RestangularProvider) {
         $routeProvider.otherwise({redirectTo: '/swap-gallery'});
+
+        $httpProvider.defaults.xsrfCookieName = 'csrftoken';
+        $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
 
         RestangularProvider.setBaseUrl('/api');
         //RestangularProvider.setDefaultHeaders({'Content-Type': undefined});
@@ -24,8 +27,6 @@ angular.module('myApp', [
     .run(['$cookieStore', '$rootScope', '$http', '$location', 'Restangular', function ($cookieStore, $rootScope, $http, $location, Restangular) {
         if ($cookieStore.get('djangotoken')) {
             $http.defaults.headers.common['Authorization'] = 'Token ' + $cookieStore.get('djangotoken');
-            $httpProvider.defaults.xsrfCookieName = 'csrftoken';
-            $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
             //document.getElementById("main").style.display = "block";
             //$location.path('/login')
         } else {
