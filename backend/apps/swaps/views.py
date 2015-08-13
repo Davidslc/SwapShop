@@ -16,7 +16,7 @@ from rest_framework.authtoken.views import ObtainAuthToken
 
 def obtain_user_from_token(request):
     auth = TokenAuthentication()
-    response = auth.authenticate_credentials(request.DATA['token'])
+    response = auth.authenticate_credentials(request.data['token'])
 
     user_id = response[0].id
 

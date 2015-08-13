@@ -17,7 +17,7 @@ angular.module('myApp', [
     .config(['$routeProvider', "RestangularProvider", function ($routeProvider, RestangularProvider) {
         $routeProvider.otherwise({redirectTo: '/swap-gallery'});
 
-        RestangularProvider.setBaseUrl('/api');
+        RestangularProvider.setBaseUrl('http://localhost:8001');
         //RestangularProvider.setDefaultHeaders({'Content-Type': undefined});
     }])
 
@@ -30,6 +30,8 @@ angular.module('myApp', [
             $location.path('/login')
         }
 
+        $http.get('http://localhost:8001/');
+
         // Add auth token to every Restangular request
         Restangular.setFullRequestInterceptor(function(element, operation, route, url, headers, params) {
 
@@ -37,6 +39,8 @@ angular.module('myApp', [
             if (token) {
                 headers['Authorization'] = 'Token ' + token;
             }
+
+            headers['X-CSRFToken'] = $cookieStore.get('csrftoken');
 
             return { element: element, params: params, headers: headers }
         });
