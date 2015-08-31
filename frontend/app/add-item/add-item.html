@@ -9,11 +9,18 @@
 <div class="add-item-detail-card item-detail-card">
 
     <div id="select-image">
-        <label>Select Image
-            <div>
-                <input type="file" onchange="angular.element(this).scope().uploadFile(this.files)"/>
-            </div>
-        </label>
+        <img ng-src="{{ item.picture }}"
+         width="200"
+         class="img-responsive img-rounded">
+
+        <input type="file" id="file" name="file" accept="image/gif, image/x-png, image/jpeg" onchange="angular.element(this).scope().add()"/>
+
+
+        <!--<label>Select Image-->
+            <!--<div>-->
+                <!--<input type="file" onchange="angular.element(this).scope().uploadFile(this.files)"/>-->
+            <!--</div>-->
+        <!--</label>-->
     </div>
     <br>
     <br>

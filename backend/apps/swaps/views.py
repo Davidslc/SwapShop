@@ -39,6 +39,10 @@ class ItemDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Item.objects.all()
 
 
+class AddItem(generics.CreateAPIView):
+    serializer_class = ItemSerializer
+
+
 class MyItemDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ItemSerializer
     # queryset = Item.objects.filter(user__username="?")
