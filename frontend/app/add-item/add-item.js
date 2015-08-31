@@ -14,27 +14,25 @@ angular.module('myApp.addItem', ['ngRoute'])
         $scope.item = {user: 1, status: "Available"};
 
         // Save fields to the item object
-        $scope.addItem = function () {
-
-            var fd = new FormData();
-            fd.append("picture", $scope.item.picture);
-            fd.append("name", $scope.item.name);
-            fd.append("description", $scope.item.description);
-            fd.append("condition", $scope.item.condition);
-            fd.append("status", $scope.item.status);
-            fd.append("user", $scope.item.user);
-
-            $http.post('http://localhost:8001/items/', fd, {
-                headers: {'Content-Type': undefined}
-            }).success(function (response) {
-                $location.path('/my-items');
-            }).error(function (response) {
-                console.log('Error response: ' + response);
-            });
+        $scope.add = function () {
+            var file = document.getElementById('file').files[0],
+                reader = new FileReader();
+            reader.onload = function(e){
+                $scope.item.picture = 'data:image/png;base64,' + btoa(e.target.result);
+                $scope.$apply();
+            };
+            reader.readAsBinaryString(file);
         };
 
-        $scope.uploadFile = function (files) {
-            $scope.item.picture = files[0];
+        $scope.addItem = function() {
+            Restangular.all('add-item/').customPOST($scope.item).then(function () {
+                document.getElementById('file').value = null;
+                $scope.$apply();
+                $scope.item.picture = null;
+                $location.path('my-items');
+            }, function (error) {
+                alert("There was an error saving your item: " + error.status);
+            })
         };
 
       $scope.conditions = ['Poor', 'Fair', 'Good', 'Excellent', 'Like New', 'New']
