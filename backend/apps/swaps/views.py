@@ -14,27 +14,6 @@ from serializers import *
 from rest_framework.authtoken.views import ObtainAuthToken
 
 
-def obtain_user_from_token(request):
-    auth = TokenAuthentication()
-    response = auth.authenticate_credentials(request.data['token'])
-
-    user_id = response[0].id
-
-    return HttpResponse(user_id)
-
-# def logout(request):
-#     auth.logout(request)
-#     return JSONResponse([{'success': 'Logged out!'}])
-
-
-# class JSONResponse(HttpResponse):
-#     def __init__(self, data, **kwargs):
-#         content = JSONRenderer().render(data)
-#         kwargs['content_type'] = 'application/json'
-#         super(JSONResponse, self).__init__(content, **kwargs)
-#
-
-
 class SwapList(generics.ListCreateAPIView):
     serializer_class = SwapSerializer
     queryset = Swap.objects.all()
@@ -62,7 +41,7 @@ class ItemDetail(generics.RetrieveUpdateDestroyAPIView):
 
 class MyItemDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ItemSerializer
-    queryset = Item.objects.filter(user__username="?")
+    # queryset = Item.objects.filter(user__username="?")
 
 
 class SwapDetail(generics.RetrieveUpdateDestroyAPIView):
@@ -95,18 +74,16 @@ class SwapDetail(generics.RetrieveUpdateDestroyAPIView):
         return HttpResponse(old_swap.status)
 
 
-class UserList(generics.ListCreateAPIView):
-    """List all users or create a new User"""
-   # permission_classes = (permissions.IsAuthenticated,)
-    model = User
-    serializer_class = UserSerializer
-    queryset = User.objects.all()
-
-
-
-
-class UserDetail(generics.RetrieveAPIView):
-    """Retrieve, update or delete a User instance."""
-    permission_classes = (permissions.IsAuthenticated,)
-    model = User
-    serializer_class = UserSerializer
+# class UserList(generics.ListCreateAPIView):
+#     """List all users or create a new User"""
+#    # permission_classes = (permissions.IsAuthenticated,)
+#     model = User
+#     serializer_class = UserSerializer
+#     queryset = User.objects.all()
+#
+#
+# class UserDetail(generics.RetrieveAPIView):
+#     """Retrieve, update or delete a User instance."""
+#     permission_classes = (permissions.IsAuthenticated,)
+#     model = User
+#     serializer_class = UserSerializer
